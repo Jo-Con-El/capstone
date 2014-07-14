@@ -50,7 +50,8 @@ public class TestX86 {
     System.out.printf("\tOpcode: %s\n", array2hex(operands.opcode));
 
     // print REX prefix (non-zero value is relevant for x86_64)
-    System.out.printf("\trex: 0x%x\n", operands.rex);
+    if (operands.rex != 0)
+      System.out.printf("\trex: 0x%x\n", operands.rex);
 
     // print address size
     System.out.printf("\taddr_size: %d\n", operands.addrSize);

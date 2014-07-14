@@ -40,7 +40,8 @@ def print_insn_detail(mode, insn):
     print_string_hex("\tOpcode:", insn.opcode)
 
     # print operand's REX prefix (non-zero value is relavant for x86_64 instructions)
-    print("\trex: 0x%x" % (insn.rex))
+    if insn.rex:
+        print("\trex: 0x%x" % (insn.rex))
 
     # print operand's address size
     print("\taddr_size: %u" % (insn.addr_size))

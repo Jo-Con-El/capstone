@@ -46,7 +46,8 @@ static void print_insn_detail(csh ud, cs_mode mode, cs_insn *ins)
 
 	print_string_hex("\tOpcode:", x86->opcode, 4);
 
-	printf("\trex: 0x%x\n", x86->rex);
+	if (x86->rex)
+		printf("\trex: 0x%x\n", x86->rex);
 
 	printf("\taddr_size: %u\n", x86->addr_size);
 	printf("\tmodrm: 0x%x\n", x86->modrm);
